@@ -19,7 +19,33 @@ const myObj = {
 };
 
 const myFunction = function () {
-  console.log("Hello World");
+  // console.log("Hello World");
 };
 
-console.log(typeof anotherId);
+// console.log(typeof anotherId);
+
+// **********************************************************************************
+// stack (primitive), heap (non-primitive / reference)
+
+let myName = "Ashishpal";
+
+let nickname = myName;
+
+nickname = "Ashu Pal";
+
+// console.log(myName);
+
+// console.log(nickname);
+
+let userOne = {
+  name: "Ashish Pal",
+  email: "ashish@gmail.com",
+};
+
+let userTwo = userOne;
+
+userTwo.name = "Ashu Pal";
+userTwo.email = "ashu@gmail.com";
+
+console.log(userOne);
+console.log(userTwo);
