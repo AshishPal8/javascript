@@ -34,3 +34,47 @@ userBooks = books.filter((bk) => {
 // console.log(userBooks);
 
 // MAPS
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const newnums = numbers.map((num) => num * 2);
+// console.log(newnums);
+
+//chaining
+const newNums = numbers
+  .map((num) => num * 10)
+  .map((num) => num + 2)
+  .filter((num) => num >= 50);
+
+// console.log(newNums);
+
+const digit = [1, 2, 3, 4];
+const total = digit.reduce(function (acc, currVal) {
+  console.log(`acc: ${acc}, currVal: ${currVal}`);
+  return acc + currVal;
+}, 0);
+
+const sumTotal = digit.reduce((acc, curr) => acc + curr, 0);
+// console.log(sumTotal);
+
+const shoppingCart = [
+  {
+    itemName: "Truke Buds",
+    price: 899,
+  },
+  {
+    itemName: "ON protein",
+    price: 1899,
+  },
+  {
+    itemName: "ATOM Creatine",
+    price: 699,
+  },
+  {
+    itemName: "Compression T-Shirt",
+    price: 399,
+  },
+];
+
+const priceTotal = shoppingCart.reduce((acc, item) => acc + item.price, 0);
+
+console.log(priceTotal);
