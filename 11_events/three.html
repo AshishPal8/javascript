@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <h1 id="name">Ashish Pal</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const start = document.querySelector("#start")
+    const stop = document.querySelector("#stop")
+    const printName = function () {
+        console.log("Ashish Pal");
+    }
+
+    let intervalId;
+
+
+    start.addEventListener("click", function () {
+        intervalId = setInterval(printName, 1000)
+    })
+
+    stop.addEventListener("click", function () {
+        clearInterval(intervalId)
+    })
+</script>
+
+</html>
