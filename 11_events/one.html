@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="hut"
+                    src="https://images.pexels.com/photos/22475982/pexels-photo-22475982/free-photo-of-historic-stone-house-with-a-roof-overgrown-with-grass-in-an-icelandic-fjord.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="hut" /></li>
+            <li><img width="200px" id="cloud"
+                    src="https://images.pexels.com/photos/19593823/pexels-photo-19593823/free-photo-of-clouds-around-deep-forest-in-valley.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="hut" /></li>
+            <li><img width="200px" id="mountain"
+                    src="https://images.pexels.com/photos/12619110/pexels-photo-12619110.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="hut" /></li>
+            <li><img width="200px" id="tree"
+                    src="https://images.pexels.com/photos/25033690/pexels-photo-25033690/free-photo-of-a-lone-tree-in-a-grassy-field.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="hut" /></li>
+            <li><img width="200px" id="women"
+                    src="https://images.pexels.com/photos/25283857/pexels-photo-25283857/free-photo-of-a-woman-in-a-pink-dress-standing-on-a-pier.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="hut" /></li>
+            <li><a style="color: aliceblue;" id="google" href="https://google.com">Google</a></li>
+        </ul>
+    </div>
+
+</body>
+<script>
+    // document.getElementById("tree").onclick = function () {
+    //     alert("Tree is clicked!")
+    // }
+
+    // want to study
+    // type, timestamp, defaltPrevented, target, toElement, currentTarget
+    // clientX, clientY, screenX, screenY, 
+    // altkey, ctrlkey, shiftKey, keyCode
+
+    // document.getElementById("images").addEventListener("click", (e) => {
+    //     console.log("Images clicked inside ul");
+
+    // }, false)
+    // document.getElementById("tree").addEventListener("click", (e) => {
+    //     console.log("Tree is clicked");
+    //     e.stopPropagation()
+    // }, false)
+    // document.getElementById("google").addEventListener("click", (e) => {
+    //     console.log("Google clicked");
+    //     e.preventDefault()
+    // }, false)
+
+    document.getElementById("images").addEventListener("click", (e) => {
+        console.log(e.target.parentNode);
+        if (e.target.tagName === "IMG") {
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        // removeIt.parentNode.removeChild(removeIt)
+    }, false)
+
+
+
+</script>
+
+</html>
