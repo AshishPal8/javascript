@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            background-color: #363636;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+        }
+
+        .info {
+            padding: 8px;
+            font-family: sans-serif;
+        }
+
+        .name {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .followers {
+            background-color: skyblue;
+            padding: 5px 10px;
+            border-radius: 10px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <div class="main">
+        <button class="btn">Click Me</button>
+
+    </div>
+</body>
+<script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    let data;
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            data = JSON.parse(this.responseText)
+            console.log(data);
+        }
+    }
+    xhr.send()
+
+    const button = document.querySelector(".btn")
+    const mainDiv = document.querySelector(".main")
+
+    button.addEventListener("click", function () {
+        mainDiv.innerHTML = `
+        <div class="card">
+            <img class="avatar" src=${data.avatar_url} alt=${data.name}/>
+            <div class="info">
+                <h1 class="name">${data.name}</h1>
+                <span class="followers">Followers: ${data.followers}</span>
+            </div>
+        </div>
+        `
+    })
+</script>
+
+</html>
