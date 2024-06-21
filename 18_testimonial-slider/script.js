@@ -21,7 +21,7 @@ function nextTestimonial() {
 }
 
 updataTestimonial(currentIndex);
-setInterval(nextTestimonial, 5000);
+setInterval(nextTestimonial, 2000);
 
 leftBtn.addEventListener("click", function () {
   currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
